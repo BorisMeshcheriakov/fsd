@@ -1,14 +1,10 @@
 import React from "react";
-import Button from "react-bootstrap/esm/Button";
+import Button, { ButtonProps } from "react-bootstrap/esm/Button";
 
-import { useAuthModal } from "../../../../features/auth";
-
-type Props = {};
-
-export const Avatar = (props: Props) => {
-  const { toggle } = useAuthModal();
+export const Avatar: React.FC<ButtonProps> = (props) => {
+  // TODO Add user image
   return (
-    <Button variant="light" onClick={toggle}>
+    <Button variant="light" {...props}>
       Войти
     </Button>
   );

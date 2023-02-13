@@ -5,11 +5,13 @@ import Navbar from "react-bootstrap/esm/Navbar";
 import NavDropdown from "react-bootstrap/esm/NavDropdown";
 import { NavLink } from "react-router-dom";
 
-import { Avatar } from "../../../entities/user";
+import { Avatar } from "../../entities/user";
+import { useAuthModal } from "../../features/auth";
 
 type Props = {};
 
-const Header = (props: Props) => {
+export const Header = (props: Props) => {
+  const { toggle } = useAuthModal();
   return (
     <Navbar bg="primary" expand="lg">
       <Container>
@@ -29,10 +31,8 @@ const Header = (props: Props) => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Avatar />
+        <Avatar onClick={toggle} />
       </Container>
     </Navbar>
   );
 };
-
-export default Header;
