@@ -1,1 +1,1 @@
-export * from "./AuthModal";
+export { AuthModal, authModalReducer, useAuthModal } from "./AuthModal";

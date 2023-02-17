@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/esm/NavDropdown";
 import { NavLink } from "react-router-dom";
 
 import { Avatar } from "../../entities/user";
-import { useAuthModal } from "../../features/auth";
+import { useAuthModal } from "features/auth";
 
 type Props = {};
 

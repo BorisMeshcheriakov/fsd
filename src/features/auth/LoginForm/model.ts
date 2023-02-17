@@ -2,7 +2,7 @@ import { SubmitHandler } from "react-hook-form/dist/types/form";
 import { useForm } from "react-hook-form";
 import { login } from "./api";
 import { useAuthModal } from "../AuthModal";
-import { hooks } from "../../../shared";
+import { hooks } from "shared";
 
 export type AuthFields = {
   phonenumber: string;
