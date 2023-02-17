@@ -8,7 +8,7 @@ export const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/test" element={<TestPage />} />
+      <Route path="/profile" element={<TestPage />} />
     </Routes>
   );
 };

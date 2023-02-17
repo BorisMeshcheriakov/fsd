@@ -11,8 +11,11 @@ export const useCookie = () => {
 
   const getCookie = (key: string) => Cookies.get(key);
 
+  const removeCookie = (key: string) => Cookies.remove(key);
+
   return {
     setCookie,
     getCookie,
+    removeCookie,
   };
 };

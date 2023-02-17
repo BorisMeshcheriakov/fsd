@@ -2,7 +2,7 @@ import { SubmitHandler } from "react-hook-form/dist/types/form";
 import { useForm } from "react-hook-form";
 import { login } from "./api";
 import { useAuthModal } from "../AuthModal";
-import { hooks } from "shared";
+import { hooks, api } from "shared";
 
 export type AuthFields = {
   phonenumber: string;
@@ -20,7 +20,12 @@ export const useAuthForm = () => {
     try {
       const response = await login(data);
       console.log(response);
-      setCookie("key", response.data.key, { expires: 7 });
+      const token = response.data.key;
+      setCookie("token", token, { expires: 7 });
+      api.interceptors.request.use((config) => {
+        config.headers.Authorization = `Token ${token}`;
+        return config;
+      });
       toggle();
     } catch (error) {
       console.log(error);

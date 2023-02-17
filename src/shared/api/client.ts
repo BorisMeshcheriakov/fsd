@@ -1,3 +1,17 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
-export const api = axios.create();
+const api = axios.create({
+  withCredentials: true,
+});
+
+const token = Cookies.get("token");
+
+if (token) {
+  api.interceptors.request.use((config) => {
+    config.headers.Authorization = `Token ${token}`;
+    return config;
+  });
+}
+
+export default api;
