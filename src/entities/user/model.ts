@@ -1,3 +1,4 @@
+import { User } from "./lib";
 import React from "react";
 import { hooks } from "shared";
 import { getUser } from "./api";
@@ -42,13 +43,6 @@ export const useLoadUser = () => {
 
   return {};
 };
-
-interface User {
-  last_name: string;
-  first_name: string;
-  middle_name: string;
-  photo: string;
-}
 
 export const useUser = () => {
   const { getItem } = hooks.useLocalStorage();

@@ -4,15 +4,11 @@ import Nav from "react-bootstrap/esm/Nav";
 import Navbar from "react-bootstrap/esm/Navbar";
 import { NavLink } from "react-router-dom";
 
-import { Menu } from "entities/user";
-import { useAuthModal, useLogout } from "entities/auth";
+import { Profile } from "features/Profile";
 
 type Props = {};
 
 export const Header = (props: Props) => {
-  const { toggle } = useAuthModal();
-  const { logout } = useLogout();
-
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
@@ -32,7 +28,7 @@ export const Header = (props: Props) => {
           </Nav.Item>
         </Nav>
 
-        <Menu onLogin={toggle} onLogout={logout} />
+        <Profile />
       </Container>
     </Navbar>
   );

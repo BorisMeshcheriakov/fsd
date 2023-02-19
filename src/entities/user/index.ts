@@ -1,2 +1,3 @@
 export * from "./ui";
-export { useLoadUser } from "./model";
+export * from "./lib";
+export { useLoadUser, useUser } from "./model";

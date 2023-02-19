@@ -1,23 +1,20 @@
-import { useAuthStatus } from "entities/user/model";
+import { useLogout } from "entities/auth";
+
 import React from "react";
-import Button from "react-bootstrap/esm/Button";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
-type Props = {
-  onLogin: () => void;
-  onLogout: () => void;
-};
+type Props = {};
 
-export const Menu: React.FC<Props> = ({ onLogin, onLogout }) => {
-  const { isAuth } = useAuthStatus();
+export const Menu: React.FC<Props> = () => {
   // TODO Add user image
 
-  const getAction = () => {
-    return isAuth ? onLogout : onLogin;
-  };
-
+  const { logout } = useLogout();
   return (
-    <Button variant="light" onClick={getAction()}>
-      {isAuth ? "Выйти" : "Войти"}
-    </Button>
+    <DropdownButton id="dropdown-basic-button" title="Меню" align="end">
+      <Dropdown.Item href="/profile">Профиль</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item onClick={logout}>Выйти</Dropdown.Item>
+    </DropdownButton>
   );
 };
