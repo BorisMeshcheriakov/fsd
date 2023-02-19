@@ -14,6 +14,7 @@ export const Avatar: React.FC<Props> = ({ onLogin, onLogout }) => {
   const getAction = () => {
     return isAuth ? onLogout : onLogin;
   };
+
   return (
     <Button variant="light" onClick={getAction()}>
       {isAuth ? "Выйти" : "Войти"}

@@ -19,8 +19,6 @@ export const Header = (props: Props) => {
         <NavLink to="/">
           <Navbar.Brand>React-Bootstrap</Navbar.Brand>
         </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
         <Nav className="me-auto">
           <Nav.Item>
             <NavLink to="/" className="d-flex align-items-center p-2">
