@@ -7,7 +7,7 @@ type Props = {
   onLogout: () => void;
 };
 
-export const Avatar: React.FC<Props> = ({ onLogin, onLogout }) => {
+export const Menu: React.FC<Props> = ({ onLogin, onLogout }) => {
   const { isAuth } = useAuthStatus();
   // TODO Add user image
 

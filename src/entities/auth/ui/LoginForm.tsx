@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/esm/Form";
 
-import { useAuthForm } from "./model";
+import { useAuthForm } from "../model";
 
 type Props = {};
 

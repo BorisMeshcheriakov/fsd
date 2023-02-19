@@ -4,8 +4,8 @@ import Nav from "react-bootstrap/esm/Nav";
 import Navbar from "react-bootstrap/esm/Navbar";
 import { NavLink } from "react-router-dom";
 
-import { Avatar } from "../../entities/user";
-import { useAuthModal, useLogout } from "features/auth";
+import { Menu } from "entities/user";
+import { useAuthModal, useLogout } from "entities/auth";
 
 type Props = {};
 
@@ -32,7 +32,7 @@ export const Header = (props: Props) => {
           </Nav.Item>
         </Nav>
 
-        <Avatar onLogin={toggle} onLogout={logout} />
+        <Menu onLogin={toggle} onLogout={logout} />
       </Container>
     </Navbar>
   );

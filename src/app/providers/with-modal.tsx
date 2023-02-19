@@ -1,4 +1,4 @@
-import { AuthModal } from "features/auth";
+import { AuthModal } from "entities/auth";
 
 export const withModal = (component: () => React.ReactNode) => () => {
   return (
