@@ -1,2 +1,2 @@
-export { Menu } from "./Menu";
-export { UserCard } from "./Card";
+export { Menu } from "./menu";
+export { UserCard } from "./card";

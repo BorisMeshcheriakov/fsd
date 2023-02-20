@@ -4,7 +4,7 @@ import Card, { CardProps } from "react-bootstrap/Card";
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
-import Image from "react-bootstrap/Image";
+import Figure from "react-bootstrap/Figure";
 
 interface Props extends CardProps {
   user: User;
@@ -13,12 +13,18 @@ interface Props extends CardProps {
 export const UserCard: React.FC<Props> = ({ user, ...props }) => {
   return (
     <Card {...props}>
-      <Container className="p-2">
+      <Container>
         <Row>
-          <Col xs={3}>
-            <Image fluid rounded src={user?.photo} />
+          <Col xs={2} className={"p-2"}>
+            <Figure.Image
+              className="m-0"
+              width={168}
+              height={168}
+              rounded
+              src={user?.photo}
+            />
           </Col>
-          <Col>
+          <Col className={"p-2"}>
             <Card.Text>{user?.birth_date}</Card.Text>
             <Card.Text>{user?.gender}</Card.Text>
             <Card.Text>{user?.email}</Card.Text>

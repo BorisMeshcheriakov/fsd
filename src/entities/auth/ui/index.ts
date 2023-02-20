@@ -1,2 +1,2 @@
-export { AuthModal } from "./AuthModal";
-export { LoginButton } from "./LoginButton";
+export { AuthModal } from "./auth-modal";
+export { LoginButton } from "./login-button";

@@ -1,4 +1,4 @@
-import { Client, Coach, User } from "./lib";
+import { Client, Coach } from "./lib";
 import React from "react";
 import { hooks } from "shared";
 import { getUser } from "./api";

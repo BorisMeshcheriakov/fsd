@@ -17,9 +17,15 @@ export const useProfileForm = () => {
     if (!user) return;
     console.log(data);
 
+    const userData = new FormData();
+    userData.append("last_name", data.last_name);
+    userData.append("first_name", data.first_name);
+    userData.append("middle_name", data.middle_name);
+    if (data["photo"][0]) userData.append("photo", data["photo"][0]);
+
     try {
-      const response = await updateMe(user.user.id, data);
-      updateUser(response.data);
+      const response = await updateMe(user.user.id, userData);
+      updateUser({ ...user, user: response.data });
     } catch (error) {
       console.error(error);
     }

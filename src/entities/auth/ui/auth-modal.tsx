@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/esm/Modal";
 import { useAuthModal } from "../model";
-import { LoginForm } from "./LoginForm";
+import { LoginForm } from "./login-form";
 
 export const AuthModal: React.FC = () => {
   const { isOpen, toggle } = useAuthModal();
