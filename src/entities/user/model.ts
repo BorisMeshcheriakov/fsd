@@ -1,4 +1,4 @@
-import { User } from "./lib";
+import { Client, Coach, User } from "./lib";
 import React from "react";
 import { hooks } from "shared";
 import { getUser } from "./api";
@@ -24,7 +24,7 @@ export const useLoadUser = () => {
       status: "loading" | "idle" | "loaded",
       isAuth: boolean
     ) => {
-      if (!isAuth) removeItem("user");
+      if (!isAuth) return removeItem("user");
       if (status === "loading" || status === "loaded") return;
 
       setStatus("loading");
@@ -45,10 +45,14 @@ export const useLoadUser = () => {
 };
 
 export const useUser = () => {
-  const { getItem } = hooks.useLocalStorage();
-  const user = getItem<User>("user");
+  const { getItem, setItem } = hooks.useLocalStorage();
+  const user = getItem<Coach | Client>("user");
+
+  const updateUser = (data: Coach | Client) =>
+    setItem<Coach | Client>("user", { ...user, ...data });
 
   return {
     user,
+    updateUser,
   };
 };

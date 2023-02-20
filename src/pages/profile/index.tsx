@@ -10,14 +10,14 @@ const ProfilePage = () => {
     <div className="container pt-2">
       <Card className="p-2">
         <Container className="d-flex justify-content-between align-items-center p-0">
-          <div>{`${user?.last_name} ${user?.first_name}`}</div>
+          <div>{`${user?.user.last_name} ${user?.user.first_name}`}</div>
 
           <Link to={"/profile/edit"}>
             <Button>Редактировать</Button>
           </Link>
         </Container>
       </Card>
-      {user && <UserCard user={user} className="mt-2" />}
+      {user && <UserCard user={user.user} className="mt-2" />}
     </div>
   );
 };

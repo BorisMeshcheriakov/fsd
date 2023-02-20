@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/esm/Nav";
 import Navbar from "react-bootstrap/esm/Navbar";
 import { NavLink } from "react-router-dom";
 
-import { Profile } from "features/Profile";
+import { Profile } from "features/profile";
 
 type Props = {};
 
