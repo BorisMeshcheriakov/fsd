@@ -31,7 +31,6 @@ export const useLoadUser = () => {
       try {
         const response = await getUser();
         setItem("user", response.data);
-        console.log(response);
       } catch (error) {
         removeItem("user");
       }
